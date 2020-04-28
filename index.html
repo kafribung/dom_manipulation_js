@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>JS DOM</title>
+
+  <style>
+    .biru {
+      color: blue;
+    }
+
+    .miring {
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body onload="alert('Berhasil Masuk')">
+  <!-- Event -->
+  <img src="kalong.png" onclick="berubah()" alt="Error" width="400" height="400" id="gambar" />
+
+  <!-- Selector powe full -->
+  <img src="code programming.png" id="code" alt="Error" width="200" height="200" />
+
+  <!-- Selector -->
+  <div id="box"></div>
+  <div class="boxes"></div>
+  <div class="boxes"></div>
+  <div class="boxes"></div>
+
+  <hr />
+
+  <!-- Edit HTML -->
+  <div id="box2">
+    <p id="data">Edit HTML</p>
+  </div>
+
+  <hr />
+  <!-- Atribute -->
+  <label id="label" for="input" class="biru">Nama</label>
+  <input type="text" placeholder="Atribute" id="input" />
+</body>
+
+<script>
+  // --------------------------------Selector;
+  // document.getElementById("box").innerHTML = "Id.Dandi";
+  // // document.getElementsByClassName("boxes")[0].innerHTML = "class.Hadrian";
+  // var boxes = document.getElementsByClassName("boxes");
+  // boxes[0].innerHTML = "class.Hadrian";
+  // boxes[2].innerHTML = "class.Syamsul";
+  // boxes[3].innerHTML = "class.Adnan";
+
+  // --------------------------------Edit HTML
+  // Add Element
+  // var el = document.createElement("h2");
+  // var text = document.createTextNode("Menambahkan Tag h2");
+  // var containt = document.getElementById("box2");
+
+  // el.appendChild(text);
+  // containt.appendChild(el);
+
+  // Delete Element
+  // containt.removeChild(el);
+
+  // Edit ELement
+  // var el2 = document.createElement("h6");
+  // var text2 = document.createTextNode("Edit HTML");
+  // var dataLama = document.getElementById("data");
+
+  // el2.appendChild(text2);
+  // containt.replaceChild(el2, dataLama);
+
+  // --------------------------------Bermain with Atribute
+  // var label = document.getElementById("label");
+  // var input = document.getElementById("input");
+
+  // input.placeholder = "ayam";
+  // label.setAttribute("class", "biru");
+  // label.className("biru");
+
+  //-------------------------------Bermain Dengan CSS
+  // label.className += " miring";
+  // input.style.border = "2px solid red";
+  // input.style.fontSize = "20px";
+  // input.style.borderRadius = "20px 0";
+  // input.style.backgroundColor = "yellow";
+
+  //-------------------------------Event
+  var gambar = document.getElementById("gambar");
+  var data = document.getElementById("data");
+  var input = document.getElementById("input");
+
+  // 1. Cara pertama
+  function berubah() {
+    gambar.style.backgroundColor = "yellow";
+  }
+
+  // 2. Cara ke-2
+  data.onclick = function () {
+    data.style.backgroundColor = "lime";
+  };
+
+  // 3. cara ke-3
+  input.addEventListener("mouseenter", function () {
+    input.style.backgroundColor = "blue";
+  });
+
+  function meninggalkan() {
+    input.style.backgroundColor = "red";
+  }
+  input.addEventListener("mouseleave", meninggalkan);
+
+  // --------------------------Selector Powe full
+  let gambarCode = document.querySelectorAll("#code");
+  gambarCode[0].style.backgroundColor = "red";
+</script>
+
+</html>
